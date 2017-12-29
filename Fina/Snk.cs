@@ -4,6 +4,11 @@ using System.Drawing;
 
 namespace GreedySnake
 {
+    //关卡 难度 刷新 分数
+    public enum Scores
+    {
+        easy=10,normal=20,difficult=30
+    }
     public enum Dict
     {
         Up, Right, Left, Down, mei
@@ -12,7 +17,7 @@ namespace GreedySnake
     {
         const int Width = 10;
 
-        const int N = 20;
+        const int N = 40;
         const int Blank = 0;
         const int Wall = 1;
         const int Fruit = 3;
@@ -31,6 +36,7 @@ namespace GreedySnake
             Head = new Point(8, 6);
             Tail = new Point(8, 7);
             wall = new List<Point>();
+            FruitCount = 0;
             for (int i = 0; i < N; i++)
             {
                 for (int j = 0; j < N; j++)
@@ -56,6 +62,11 @@ namespace GreedySnake
                 Head
             };
         }
+        public int FruitCount
+        {
+            get;
+            set;
+        }
         public void Setfruit()
         {
 
@@ -71,7 +82,7 @@ namespace GreedySnake
                     break;
                 }
             }
-
+            FruitCount++;
         }
         public bool Move(Dict di)
         {

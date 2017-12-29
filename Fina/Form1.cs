@@ -41,7 +41,8 @@ namespace GreedySnake
             snake = new Snk();
             Direction = Dict.Up;        
             timer1.Enabled = true;
-            
+            score.Text = (snake.FruitCount * 
+                (int)Scores.normal).ToString();
         }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -73,10 +74,11 @@ namespace GreedySnake
             timer1.Enabled = false;
             if (Game == true)
             {
-               
+                score.Text = (snake.FruitCount *
+                (int)Scores.normal).ToString();
                 try
                 {
-                    Graphics g = SkBox.CreateGraphics();
+                    Graphics g = skBox.CreateGraphics();
                     snake.Draw(g);
                 }
                 catch { }
@@ -93,9 +95,9 @@ namespace GreedySnake
                     snake = new Snk();
                     Direction = Dict.Up;
                     timer1.Enabled = true;
+                    Game = true;
                 }
             }
         }
-
     }
 }
