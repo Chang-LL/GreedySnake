@@ -51,7 +51,6 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // label1
@@ -78,6 +77,7 @@
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(104, 56);
             this.trackBar1.TabIndex = 3;
+            this.trackBar1.Visible = false;
             // 
             // label3
             // 
